@@ -22,3 +22,23 @@ class Vehicle(models.Model):
     parking_lot = models.ForeignKey(ParkingLot, on_delete=models.CASCADE)
     total_cost = models.DecimalField(max_digits=8, decimal_places=2, null=True)
     is_paid = models.BooleanField(default=False)
+
+# models.py - Разширение за SaaS
+class Subscription(models.Model):
+    PLANS = [
+        ('basic', 'Basic - 1 паркинг'),
+        ('pro', 'Pro - 5 паркинга'),
+        ('enterprise', 'Enterprise - Неограничено')
+    ]
+    
+    owner = models.ForeignKey(User, on_delete=models.CASCADE)
+    plan = models.CharField(max_length=20, choices=PLANS)
+    is_active = models.BooleanField(default=True)
+    expires_at = models.DateTimeField()
+    monthly_fee = models.DecimalField(max_digits=8, decimal_places=2)
+
+class Revenue(models.Model):
+    parking_lot = models.ForeignKey(ParkingLot, on_delete=models.CASCADE)
+    date = models.DateField()
+    total_revenue = models.DecimalField(max_digits=10, decimal_places=2)
+    platform_commission = models.DecimalField(max_digits=8, decimal_places=2)
