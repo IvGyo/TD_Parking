@@ -9,3 +9,42 @@ redis==4.6.0
 psycopg2-binary==2.9.7
 pillow==10.0.0
 numpy==1.24.3
+# Core Django dependencies
+Django==4.2.7
+djangorestframework==3.14.0
+django-cors-headers==4.3.1
+python-decouple==3.8
+
+# Database
+psycopg2-binary==2.9.7
+dj-database-url==2.1.0
+
+# Authentication & Security
+djangorestframework-simplejwt==5.3.0
+django-allauth==0.57.0
+
+# Image processing & AI
+opencv-python==4.8.1.78
+Pillow==10.1.0
+numpy==1.25.2
+pytesseract==0.3.10
+tensorflow==2.13.0
+
+# Payment processing
+stripe==7.5.0
+
+# Task queue
+celery==5.3.4
+redis==5.0.1
+
+# API documentation
+drf-spectacular==0.26.5
+
+# Utilities
+python-dateutil==2.8.2
+requests==2.31.0
+gunicorn==21.2.0
+
+# Development
+django-debug-toolbar==4.2.0
+pytest-django==4.5.2
